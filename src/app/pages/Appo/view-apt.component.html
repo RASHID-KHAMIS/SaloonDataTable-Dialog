@@ -1,0 +1,30 @@
+<app-card title="Appointment" subtitle="List of Appointment">
+    <div class="app-card-actions">
+        <button mat-raised-button color="primary" (click)="onAddApt()">
+            <mat-icon>add</mat-icon> Appointment</button>
+    </div>
+</app-card>
+<app-card>
+    <table class="table table-">
+        <thead>
+            <th>SN</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appo of appoList,let i=index">
+                <td>{{i+1}}</td>
+                <td>{{appo.appointmentDate}}</td>
+                <td>{{appo.customer.firstName}}&nbsp;{{appo.customer.lastName}}</td>
+                <td>{{appo.customer.phoneNumber}}</td>
+                <td>{{appo.customer.gender}}</td>
+                <td>
+                    <button mat-raised-button color="primary" ><mat-icon>edit</mat-icon></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</app-card>

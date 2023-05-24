@@ -1,0 +1,36 @@
+<app-card title="Employee" subtitle="List of Employee">
+    <div class="app-card-actions">
+        <button mat-raised-button color="primary" (click)="onAddEmployee()"><mat-icon>add</mat-icon>Employee</button>
+    </div><br>
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+
+    <table class="table table-bordered">
+        <thead>
+            <th>SN</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Gender</th>
+            <th>Role</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeeList;let i =index">
+            <td>{{i+1}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.phoneNumber}}</td>
+            <td>{{employee.city}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.role}}</td>
+            <td>
+                <button mat-raised-button color="primary" (click)="onEditEmployee(employee)"><mat-icon>edit</mat-icon></button>
+                <button mat-raised-button color="warn"  (click)="onDelete(employee)"><mat-icon>delete</mat-icon></button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</app-card>

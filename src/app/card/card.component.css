@@ -1,0 +1,11 @@
+.mat-action-buttons{
+    position: absolute;
+    right: 35px;
+    top: 20px;
+}
+
+.mat-action-button{
+    position: absolute;
+    right: 35px;
+    bottom: 20px;
+}

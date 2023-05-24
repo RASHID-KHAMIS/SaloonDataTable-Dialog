@@ -1,0 +1,42 @@
+<app-card title="Customer" subtitle="List of Customers">
+   <div class="app-card-actions">
+    <button mat-raised-button color="primary" (click)="onAddCustomer()" ><mat-icon>add</mat-icon>Customer</button>
+   </div><mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+   <table class="table table-bordered">
+    <thead>
+        <th>SN</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZipCode</th>
+        <th>Gender</th>
+        <th>Action</th>
+    </thead>
+        <tbody>
+            <tr *ngFor="let customer of customerList;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.phoneNumber}}</td>
+                <td>{{customer.street}}</td>
+                <td>{{customer.city}}</td>
+                <td>{{customer.state}}</td>
+                <td>{{customer.zipCode}}</td>
+                <td>{{customer.gender}}</td>
+                <td>
+                    <button mat-raised-button color="primary" (click)="onEdit(customer)">
+                        <mat-icon>edit</mat-icon></button>
+
+                        <button mat-raised-button color="warn" (click)="onDelete(customer)">
+                            <mat-icon>delete</mat-icon></button>
+                </td>
+            </tr>
+        </tbody>
+    
+   </table>
+
+</app-card>

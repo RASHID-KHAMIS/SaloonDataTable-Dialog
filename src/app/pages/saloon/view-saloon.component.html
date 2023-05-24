@@ -1,0 +1,35 @@
+<app-card title="Saloon" subtitle="List of Saloon">
+    <div class="app-card-actions">
+        <button mat-raised-button color="primary" (click)="onAddSaloon()">
+            <mat-icon>add</mat-icon>Saloon</button>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+            <th>SN</th>
+            <th>Service Name</th>
+            <th>Service Duration</th>
+            <th>Service Price</th>
+            <th>Service Materials</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let saloon of saloonList;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{saloon.serviceName}}</td>
+                <td>{{saloon.serviceDuration}}</td>
+                <td>{{saloon.servicePrice}}</td>
+                <td>{{saloon.serviceMaterials}}</td>
+                <td>
+                    <button mat-raised-button color="primary" (click)="onEdit(saloon)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+
+                    <button mat-raised-button color="warn" (click)="onDelete(saloon)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</app-card>

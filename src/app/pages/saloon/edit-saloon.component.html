@@ -1,0 +1,43 @@
+<app-card title="Saloon" subtitle="Edit Service">
+    <div class="app-card-actions">
+        <button mat-raised-button color="primary" (click)="onBack()">Back</button>
+    </div>
+</app-card>
+
+<app-card>
+    <form [formGroup]="saloonEditForm" autocomplete="off">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Service Name </mat-label>
+                    <input matInput formControlName="serviceName" placeholder="serviceName">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Duration </mat-label>
+                    <input matInput formControlName="serviceDuration" placeholder="serviceDuration">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Price </mat-label>
+                    <input matInput formControlName="servicePrice" placeholder="servicePrice">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>serviceMaterials</mat-label>
+                    <input matInput formControlName="serviceMaterials" placeholder="serviceMaterials">
+                </mat-form-field>
+            </div>
+        </div>
+
+       
+    </form>
+    <button mat-raised-button color="primary" (click)="onSave()">
+        <mat-icon>save</mat-icon> save</button>
+</app-card>

@@ -1,0 +1,67 @@
+<app-card title="Customers" subtitle="Edit Customers">
+<div class="app-card-actions">
+    <button mat-raised-button color="primary" (click)="onBack()">Back</button>
+</div><br>
+    <form [formGroup]="custEditForm"  autoComplete="off">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>First Name</mat-label>
+                    <input  matInput formControlName="firstName"  placeholder="firstName">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Last Name</mat-label>
+                    <input  matInput formControlName="lastName"   placeholder="lastName">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>PhoneNumber</mat-label>
+                    <input  matInput formControlName="phoneNumber"   placeholder="phoneNumber">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Street</mat-label>
+                    <input  matInput  formControlName="street"  placeholder="street">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>City</mat-label>
+                    <input  matInput formControlName="city"   placeholder="city">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>State</mat-label>
+                    <input  matInput formControlName="state"  placeholder="state">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>ZipCode</mat-label>
+                    <input  matInput formControlName="zipCode"  placeholder="zipCode">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Gender</mat-label>
+                    <input  matInput formControlName="gender"  placeholder="gender">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+    <button mat-raised-button color="primary" (click)="onSave()">
+        <mat-icon>save</mat-icon>Save</button>
+</app-card>

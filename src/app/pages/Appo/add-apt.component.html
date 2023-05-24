@@ -1,0 +1,33 @@
+<app-card title="Employee" subtitle="Create new Employee">
+    <div class="app-card-actions">
+        <button mat-raised-button color="primary" (click)="onBack()" ><mat-icon>back</mat-icon>Back</button>
+    </div>
+    </app-card>
+
+    <app-card>
+        <form [formGroup]="appoForm" autocomplete="off">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Appointment Time</mat-label>
+                        <input matInput formControlName="appointmentDate" placeholder="Time">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Select firstName</mat-label>
+                            <mat-select (selectionChange)="getCustomer($event.value)">
+                              <mat-option *ngFor="let item of customers" [value]="item.id">
+                                {{item.firstName}}
+                                {{item.lastName}}
+                            </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+        <button mat-raised-button color="primary" (click)="onSave()">
+            <mat-icon>save</mat-icon> save</button>
+    </app-card>
+
+   
